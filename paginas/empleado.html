@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es" class="h-100 ">
+<head>
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Inicio</title>
+
+  <!-- Esto es bootstrap -->
+  <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.js"></script>
+
+  <!-- Este es mi estilo -->
+  <link rel="stylesheet" href="../paginas/styles/mainstyles.css">
+
+  <!-- Fondo del LOGIN -->
+  <style>
+    body {
+      background-image: url('../media/imagenes/fondoprincipal.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- MENÚ -->
+  <header>
+
+    <!-- Navbar botones de los modulos de inicio, estidiante e ingreso a personal -->
+    <div class="navbar fixed-top navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <!-- logo en el navbar -->
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="../media/logo/logoinstitutoclei.png" alt="" class="me-2" wsidth="40" height="40">
+          <strong>Instituto CLEI</strong>
+        </a>
+        <nav class="fw-bold nav nav-masthead nav-pills nav-fill justify-content-center float-md-end">
+          <ul class="nav nav-pills">
+            <!-- Boton de inicio -->
+            <a class="nav-link" style="margin-left: 20px"  href="../index.html">Inicio</a>
+            <!-- Boton de Estudiante -->
+            <a class="nav-link" style="margin-left: 20px" href="../paginas/consultaestudiante.html">Estudiante</a>
+            <!-- desplegable de ingreso "Empleado" o "Administrador" -->
+            <li class="nav-item dropdown">
+              <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown"  style="margin-left: 10px" href="#" role="button" aria-expanded="false">Ingreso de personal - Empleado</a>
+              <ul class="dropdown-menu">
+                <!-- Activo -->
+                <li ><a class="dropdown-item" href="../paginas/empleado.html">Empleado</a></li>
+                <!-- Inactivo -->
+                <li><a class="dropdown-item" href="../paginas/administrador.html">Administrador</a></li>
+              </ul>
+            </li> 
+          </ul>
+        </nav>
+        <!-- Boton del navbar -->
+        <button>
+        </button>
+      </div>      
+    </div>
+  </header>
+
+  <!-- LOGIN DE INGRESO -->
+  <main class="form-signin w-100 m-auto text-center" style="padding-top: 150px;">
+    <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" >
+      <img class="mb-4" src="../media/logo/logopaovadark.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>
+      <div class="form-floating ">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput" > Usuario </label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recuerdame
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+      <br>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+      <a type="button" class="btn btn-primary  btn-lg" href="../paginas/Inicio_del_sistema.html">Modo directo de ingreso  al sistema (temporal)</a></p>
+    </form>
+  </main>
+  
+</body>
+</html>
+

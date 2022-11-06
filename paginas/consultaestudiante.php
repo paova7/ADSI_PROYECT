@@ -29,15 +29,7 @@
 
     }
   </style>
-  <script>
-    function enviame(laUrl, elId) {
-      var elform = document.getElementById("MiForm");
-      var eldato = document.getElementById("documento");
-      eldato.value = elId;
-      elform.action = laUrl;
-      elform.submit();
-    }
-  </script>
+
 
 </head>
 
@@ -101,9 +93,6 @@
   <!-- CONTENIDO DEL MÓDULO DE CONSULTA ESTUDIANTES-->
 
   <main style="padding-top: 120px;">
-
-
-
     <div class="container-fluid col-xl-10 col-xxl-8 px-4 py-5 text-white">
       <div class=" row align-items-center  py-5">
         <!-- Parte 1 del contenido  -->
@@ -130,57 +119,65 @@
             $db = new db_conexion();               /*Abre la base de datos*/
 
             $consultaestudiante = "";
+            $contadornoexiste = 0;
+            $contadorvacio = 0;
 
             if (isset($_POST['btn_consultar'])) {
 
               $consultaestudiante = $_POST["documento"];   /*Pide la cedula por POST*/
-              if ($consultaestudiante == "") {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
-              // Imprime una alerta cuando el campo está vacio
-                echo '
-          <br>
-          <br>        
-          <div class="container formulario"></div>
-          <center>
-            <div class="alert alert-danger" role="alert">
-            <strong>Error!</strong> El numero de Cedula es Obligatorio.
-            </div>
-          </center>
-          </div>';
-              } elseif ($consultaestudiante <> 0) { //Realiza la consuta 
 
-                $sql = "SELECT documento_estudiante FROM estudiantes
-      WHERE documento_estudiante ='$consultaestudiante'";
+              if ($consultaestudiante == "") {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
+                // Imprime una alerta cuando el campo está vacio
+                $contadorvacio ++;
+                echo '
+                <br>
+                <br>        
+                  <div class="container formulario"></div>
+                    <center>
+                      <div class="alert alert-danger" role="alert">
+                      <strong>Error!</strong> El numero de Cedula es Obligatorio.
+                      </div>
+                    </center>
+                  </div>';
+              }
+
+              if ($consultaestudiante <> 0) {                              //Realiza la consuta 
+              $sql = "SELECT documento_estudiante FROM estudiantes
+                      WHERE documento_estudiante ='$consultaestudiante'";
 
                 $resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
                 while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
-                  $db->db_cerrar();
+                $db->db_cerrar();
 
-                  if ($consultaestudiante == $registro['documento_estudiante']) {//Si eciste realiza la consulta e informa que puede ver el informe
-            ?>
-                    <br>
-                    <br>
-                    <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button></a>
+                  if ($consultaestudiante == $registro['documento_estudiante']) { 
+                    $contadornoexiste ++;                                                         //Si existe realiza la consulta e informa que puede ver el informe
+                    ?>
 
-            <?php
-
-                  } 
-                  
-                  else {//Sin definir
-
-                    echo '
-          <br>
-          <br>        
-          <div class="container formulario"></div>
-          <center>
-            <div class="alert alert-danger" role="alert">
-            <strong>Error!</strong> El numero de Cedula no existe.
-            </div>
-          </center>
-          </div>';
+                      <br>
+                      <br>
+                      <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button></a>
+                    
+                    <?php
+                    
+                
                   }
                 }
               }
-            }
+              
+              if ($contadornoexiste == 0 and $contadorvacio == 0){ 
+                echo '
+                <br>
+                <br>        
+                  <div class="container formulario"></div>
+                    <center>
+                      <div class="alert alert-danger" role="alert">
+                      <strong>Error!</strong> El numero de Cedula no existe.
+                      </div>
+                    </center>
+                  </div>';
+              }
+            
+            }  
             ?>
 
             <hr class="my-4">

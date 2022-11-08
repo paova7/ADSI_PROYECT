@@ -126,7 +126,17 @@
 
               $consultaestudiante = $_POST["documento"];   /*Pide la cedula por POST*/
 
-              if ($consultaestudiante == "") {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
+              if (
+                $documento    == "" ||
+                $nombre       == "" ||
+                $apellido     == "" ||
+                $email        == "" ||
+                $fecha        == "" ||
+                $discapacidad == "" ||
+                $curso        == "" ||
+                $horario      == "" ||
+                $numero_acudiente  == "" ||
+                $ciudad_residencia == ""   ) {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
                 // Imprime una alerta cuando el campo está vacio
                 $contadorvacio ++;
                 echo '

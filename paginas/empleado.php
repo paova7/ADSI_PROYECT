@@ -71,29 +71,66 @@
 
   <!-- LOGIN DE INGRESO -->
   <main class="form-signin w-100 m-auto text-center" style="padding-top: 150px;">
-    <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" >
+    <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" action ="empleado.php" method="POST">
+
       <img class="mb-4" src="../media/logo/logopaovadark.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>
+
       <div class="form-floating ">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput" > Usuario </label>
+        <input type="text" class="form-control" id="floatingInput" name="usuario" required= "" >
+        <label for="floatingInput"> Usuario </label>
       </div>
+
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input name="contrasena" type="password" class="form-control" id="floatingPassword" required= "">
         <label for="floatingPassword">Contraseña</label>
       </div>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Recuerdame
-        </label>
-      </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+
+      <button class="w-100 btn btn-lg btn-primary" name="enviar" type="submit">Ingresar</button>
       <br>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-      <a type="button" class="btn btn-primary  btn-lg" href="../paginas/Inicio_del_sistema.html">Modo directo de ingreso  al sistema (temporal)</a></p>
+
+<?php 
+
+require_once '../conexion/conexion.php';
+
+if (isset($_POST['enviar'])) {
+
+    $db = new db_conexion();
+
+    $usuario = $_POST['usuario'];
+
+    $sql = "SELECT usuario_login,passport_login FROM empleados 
+            WHERE usuario_login  = '$usuario'";
+
+    $query_exec = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
+    while ($row = mysqli_fetch_array($query_exec)) {            /*pasa a vector*/
+    $db->db_cerrar();
+    
+
+    if ($_POST['contrasena'] == $row['passport_login'] and $_POST['usuario'] == $row['usuario_login']){
+      header('location:Inicio_del_sistema.html');
+    } 
+  }
+
+  ?>
+  <br>
+  <div class="container">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!      </strong>   Usuario o contraseña incorrectos.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  </div>
+  <?php
+      
+  }
+
+
+?>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
     </form>
   </main>
-  
 </body>
 </html>
 

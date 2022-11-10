@@ -113,10 +113,12 @@
 
             <input class="w-100 btn btn-lg btn-primary" type="submit" value="Consultar" class="btn btn-primary" name="btn_consultar">
 
+
+
             <?php
 
             require_once '../conexion/conexion.php';  /*LLama la conexión*/
-            $db = new db_conexion();               /*Abre la base de datos*/
+           $db = new db_conexion();               /*Abre la base de datos*/
 
             $consultaestudiante = "";
             $contadornoexiste = 0;
@@ -126,20 +128,11 @@
 
               $consultaestudiante = $_POST["documento"];   /*Pide la cedula por POST*/
 
-              if (
-                $documento    == "" ||
-                $nombre       == "" ||
-                $apellido     == "" ||
-                $email        == "" ||
-                $fecha        == "" ||
-                $discapacidad == "" ||
-                $curso        == "" ||
-                $horario      == "" ||
-                $numero_acudiente  == "" ||
-                $ciudad_residencia == ""   ) {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
+              if ($consultaestudiante == "") {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
                 // Imprime una alerta cuando el campo está vacio
                 $contadorvacio ++;
-                echo '
+
+                ?>
                 <br>
                 <br>        
                   <div class="container formulario"></div>
@@ -148,7 +141,9 @@
                       <strong>Error!</strong> El numero de Cedula es Obligatorio.
                       </div>
                     </center>
-                  </div>';
+                  </div>
+
+                <?php
               }
 
               if ($consultaestudiante <> 0) {                              //Realiza la consuta 
@@ -169,7 +164,6 @@
                     
                     <?php
                     
-                
                   }
                 }
               }
@@ -189,7 +183,6 @@
             
             }  
             ?>
-
             <hr class="my-4">
             <small class="text-muted"> Año 2022</small>
           </form>
@@ -198,8 +191,6 @@
     </div>
   </main>
 
-
-  </div>
 
 
 </body>

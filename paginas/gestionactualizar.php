@@ -43,7 +43,7 @@
 
         <!-- Modulo de Gestión Activo -->
         <li>
-          <a href="../paginas/gestion.html" class="nav-link text-white active" aria-current="page">
+          <a href="../paginas/gestion.php" class="nav-link text-white active" aria-current="page">
             <img src="../media/iconos/Management.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Gestión - Crear
           </a>

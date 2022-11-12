@@ -51,7 +51,7 @@
 
         <!-- Modulo de Financiero -->
         <li>
-          <a href="../paginas/financiero.html" class="nav-link text-white">
+          <a href="../paginas/financiero.php" class="nav-link text-white">
             <img src="../media/iconos/Financiero.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
             Financiero
           </a>
@@ -60,7 +60,7 @@
 
         <!-- Modulo de Novedades -->
         <li>
-          <a href="../paginas/novedades.html" class="nav-link text-white">
+          <a href="../paginas/novedades.php" class="nav-link text-white">
             <img src="../media/iconos/Novedad.ico"class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Novedades
           </a>
@@ -69,7 +69,7 @@
 
         <!-- Modulo de Administrador -->
         <li>
-          <a href="../paginas/systemadministrador.html" class="nav-link text-white">
+          <a href="../paginas/systemadministrador.php" class="nav-link text-white">
             <img src="../media/iconos/Administrador .ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
             Administrador
           </a>
@@ -78,7 +78,7 @@
 
         <!-- Modulo de Estudiantes -->
         <li>
-          <a href="../paginas/estudiantes.html" class="nav-link text-white">
+          <a href="../paginas/estudiantes.php" class="nav-link text-white">
             <img src="../media/iconos/Estudiante.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
             Estudiantes
           </a>
@@ -189,7 +189,8 @@
                     <div class="dropdown">
                         <a href="../paginas/gestion.php"><button type="button" class="btn btn-primary">Limpiar</button></a>
                         <a href="../paginas/gestionactualizar.php"><button type="button" class="btn btn-warning" >Modificar</button></a>
-                        <a href="../paginas/gestion.php"><button type="button" class="btn btn-danger" >Eliminar</button></a>
+                        <a href="../paginas/gestionborrar.php"><button type="button" class="btn btn-danger" name="btn_eliminar">Eliminar</button></a>
+                        
                     </div>
                 </div>
 
@@ -211,7 +212,7 @@
                     
                   </div>
                   <br>
-                  <a href="../paginas/gestioncrear.php"> <button type="button"  class="btn btn-success"  > Crear estudiante</button></a> 
+                  <a href="../paginas/gestioncrear.php"> <button type="button"  class="btn btn-success"> Crear estudiante</button></a> 
                   <br>
                   
                 <?php
@@ -219,6 +220,13 @@
                 ?>
 
         </div>
+  <?php
+if (isset($_POST['btn_consultar'])) {
+
+
+
+}
+?>
       </div>
     </div>
 

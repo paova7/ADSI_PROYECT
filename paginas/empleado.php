@@ -51,15 +51,7 @@
             <!-- Boton de Estudiante -->
             <a class="nav-link" style="margin-left: 20px" href="../paginas/consultaestudiante.php">Estudiante</a>
             <!-- desplegable de ingreso "Empleado" o "Administrador" -->
-            <li class="nav-item dropdown">
-              <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown"  style="margin-left: 10px" href="#" role="button" aria-expanded="false">Ingreso de personal - Empleado</a>
-              <ul class="dropdown-menu">
-                <!-- Activo -->
-                <li ><a class="dropdown-item" href="../paginas/empleado.html">Empleado</a></li>
-                <!-- Inactivo -->
-                <li><a class="dropdown-item" href="../paginas/administrador.html">Administrador</a></li>
-              </ul>
-            </li> 
+            <a class="nav-link active" aria-current="page" style="margin-left: 20px" href="../paginas/empleado.php">Ingreso de personal</a>
           </ul>
         </nav>
         <!-- Boton del navbar -->

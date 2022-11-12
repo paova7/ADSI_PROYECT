@@ -1,20 +1,19 @@
-if (
-        $documento    == "" ||
-        $nombre       == "" ||
-        $apellido     == "" ||
-        $email        == "" ||
-        $fecha        == "" ||
-        $discapacidad == "" ||
-        $curso        == "" ||
-        $horario      == "" ||
-        $numero_acudiente  == "" ||
-        $ciudad_residencia == ""   )
+if ($documento    == "" ||
+$nombre       == "" ||
+$apellido     == "" ||
+$email        == "" ||
+$fecha        == "" ||
+$curso        == "" ||
+$horario      == "" ||
+$numero_estudiante == "" ||
+$numero_acudiente  == "" ||
+$ciudad_residencia  == ""||         
+$discapacidad == ""
+) { 
 
-
-
-        if ($contadorexiste == 1) {   
-
-}
+    $novedad   == "" ||
+    $fecha     == "" ||        
+    $anexo     == "" 
 
 
 

@@ -52,7 +52,7 @@
 
         <!-- Modulo de Financiero -->
         <li>
-          <a href="../paginas/financiero.html" class="nav-link text-white">
+          <a href="../paginas/financiero.php" class="nav-link text-white">
             <img src="../media/iconos/Financiero.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  >
             Financiero
           </a>
@@ -61,7 +61,7 @@
 
         <!-- Modulo de Novedades -->
         <li>
-          <a href="../paginas/novedades.html" class="nav-link text-white">
+          <a href="../paginas/novedades.php" class="nav-link text-white">
             <img src="../media/iconos/Novedad.ico"class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" >
             Novedades
           </a>
@@ -70,7 +70,7 @@
 
         <!-- Modulo de Administrador -->
         <li>
-          <a href="../paginas/systemadministrador.html" class="nav-link text-white">
+          <a href="../paginas/systemadministrador.php" class="nav-link text-white">
             <img src="../media/iconos/Administrador .ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  >
             Administrador
           </a>
@@ -79,7 +79,7 @@
 
         <!-- Modulo de Estudiantes -->
         <li>
-          <a href="../paginas/estudiantes.html" class="nav-link text-white active" aria-current="page">
+          <a href="../paginas/estudiantes.php" class="nav-link text-white active" aria-current="page">
             <img src="../media/iconos/Estudiante.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50" >
             Estudiantes
           </a>

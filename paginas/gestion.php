@@ -221,11 +221,6 @@
 
         </div>
   <?php
-if (isset($_POST['btn_consultar'])) {
-
-
-
-}
 ?>
       </div>
     </div>

@@ -94,7 +94,7 @@ $consultaestudiante = $_GET["documento"];
 require_once '../conexion/conexion.php';  /*LLama la conexión*/
 $db = new db_conexion();               /*Abre la base de datos*/
 
-$sql = "SELECT * FROM estudiantes
+$sql = "SELECT * FROM estudiantes, financiero 
       WHERE documento_estudiante ='$consultaestudiante'";
 
         $resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
@@ -123,8 +123,8 @@ $sql = "SELECT * FROM estudiantes
                                     <td>Fecha de nacimiento:<?php echo " " . $registro['fechadenacimiesto_estudiante']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>NUMERO DE TELEFONO:<?php echo " " . $registro['numerocontacto_estudiante']; ?></td>
-                                    <td>ciudad de residencia:<?php echo " " . $registro['ciudad_estudiante']; ?> </td>
+                                    <td>Número de telefono:<?php echo " " . $registro['numerocontacto_estudiante']; ?></td>
+                                    <td>Ciudad de residencia:<?php echo " " . $registro['ciudad_estudiante']; ?> </td>
                                 </tr>
                                 <tr>
                                     <td scope="col">Email:<?php echo " " . $registro['email_estudiante']; ?></td>
@@ -134,12 +134,12 @@ $sql = "SELECT * FROM estudiantes
                             </tbody>
                         </table>
                     </div>
-                    <p class="fs-8 fw-bolder" ;>Datos del curso</p>
+                    <p class="fs-8 fw-bolder" ;>Programa en curso</p>
                     <div class="bd-example">
                         <table class="table table-sm table-bordered">
                             <tbody>
                                 <tr>
-                                    <td scope="col"> Curso:<?php echo " " . $registro['curso_estudiante']; ?></td>
+                                    <td scope="col"> <?php echo " " . $registro['curso_estudiante']; ?></td>
                                     <td scope="col">Horario de clases: <?php echo  " " . $registro['horario_estudiante']; ?></td>
                                 </tr>
                             </tbody>
@@ -150,12 +150,50 @@ $sql = "SELECT * FROM estudiantes
                         <table class="table table-sm table-bordered">
                             <tbody>
                                 <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['curso_estudiante']; ?></td>
-                                    <td scope="col">Horario de clases: <?php echo  " " . $registro['horario_estudiante']; ?></td>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
                                 </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+
+                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
+                    <!-- Realizar otra consulta -->
                     <div class="dropdown">
                         <a href="../paginas/consultaestudiante.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Realizar otra consulta</button></a>
 

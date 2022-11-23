@@ -94,13 +94,13 @@ $consultaestudiante = $_GET["documento"];
 require_once '../conexion/conexion.php';  /*LLama la conexión*/
 $db = new db_conexion();               /*Abre la base de datos*/
 
-$sql = "SELECT * FROM estudiantes, financiero 
-      WHERE documento_estudiante ='$consultaestudiante'";
+$sql = "SELECT * FROM estudiantes
+        WHERE documento_estudiante ='$consultaestudiante'";
 
-        $resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
-        while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
+$resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
+while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
 
-            $db->db_cerrar();
+
 ?>
         </div>
         <br>
@@ -145,51 +145,38 @@ $sql = "SELECT * FROM estudiantes, financiero
                             </tbody>
                         </table>
                     </div>
+    
+
+
                     <p class="fs-8 fw-bolder" ;>Pagos realizados</p>
                     <div class="bd-example">
                         <table class="table table-sm table-bordered">
                             <tbody>
                                 <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+                                <?php
+    
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+$sql2 = "SELECT * FROM financiero
+WHERE documentoestudiante_financiero ='$consultaestudiante'";
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+$resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
+while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/    
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+$db->db_cerrar()
 
-                                </tr>
-                                <tr>
-                                    <td scope="col"> Fecha del pago:<?php echo " " . $registro['fechadepago_financiero']; ?></td>
-                                    <td scope="col"> Monto del pago:<?php echo " " . $registro['valorcancelado_financiero']; ?></td>
+ ?>  
+ <td scope="col"> Fecha de Pago:<?php echo " " . $registro2['fechadepago_financiero']. " " . "Valor Pagado: " .$registro2['valorcancelado_financiero']; ?></td>
 
-                                </tr>
+                                    
                                 
+<?php
+        }
+ ?>    
+                                
+                                </tr>
                             </tbody>
                         </table>
                     </div>

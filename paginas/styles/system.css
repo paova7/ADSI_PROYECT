@@ -83,3 +83,29 @@ main {
   background-color: #2545ac;
 }
 
+
+.form-signin {
+  max-width: 350px;
+  max-height: 600px;
+}
+
+.p-4 {
+  padding: 3rem!important;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 50px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 50px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+

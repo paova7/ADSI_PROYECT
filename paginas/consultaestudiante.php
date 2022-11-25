@@ -87,16 +87,16 @@
 
   <!-- CONTENIDO DEL MÓDULO DE CONSULTA ESTUDIANTES-->
 
-  <main style="padding-top: 120px;">
+  <main style="padding-top: 20px;">
     <div class="container-fluid col-xl-10 col-xxl-8 px-4 py-5 text-white">
       <div class=" row align-items-center  py-5">
         <!-- Parte 1 del contenido  -->
-        <div class="col-lg-7 text-center text-lg-start">
+        <div class="col-lg-6 text-center text-lg-start">
           <h1 class="display-4 fw-bold lh-1 mb-3">Consulta tu estado en el Instituto CLEI</h1>
           <p class="col-lg-10 fs-4">Podrás visiaulizar tu información personal y los pagos que has realizado hasta la fecha. </p>
         </div>
         <!-- Parte 2 formulario de ingreso para realizar la consulta -->
-        <div class="col-md-10 mx-auto col-lg-5" style="color:#000000">
+        <div class="col-md-10 mx-auto col-lg-6" style="color:#000000">
           <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;" method="POST" action="consultaestudiante.php" name="MiForm">
             <p class="fs-3 fw-bolder">Escribe tu documento</p>
             <p>Ingresa el número de documento del estudiante sin espacios ni puntos. </p>

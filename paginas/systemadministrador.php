@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es ">
+
 <head>
   <meta charset="UTF-8">
 
@@ -15,26 +16,38 @@
 
   <!-- Este es mi estilo -->
   <link rel="stylesheet" href="../paginas/styles/system.css">
-  
+
+  <style>
+    body {
+      background-image: url('../media/imagenes/fondoadmi.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+
+
+    }
+  </style>
+
 
 </head>
 
 <body>
 
-<main >
+  <main>
     <!-- SIDE BARD -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none " >
-          <img src="../media/logo/Isologoinstitutoclei.png"  height="95">
+      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+        <img src="../media/logo/Isologoinstitutoclei.png" height="95">
       </a>
       <hr>
 
       <!-- Modulos del sistema -->
-      <ul class="nav nav-pills flex-column mb-auto" >
+      <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
           <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
-            <img src="../media/iconos/home.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  alt="">
+            <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Inicio
           </a>
         </li>
@@ -43,7 +56,7 @@
         <!-- Modulo de Gestión -->
         <li>
           <a href="../paginas/gestion.php" class="nav-link text-white">
-            <img src="../media/iconos/Management.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  alt="">
+            <img src="../media/iconos/Management.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Gestión
           </a>
         </li>
@@ -52,7 +65,7 @@
         <!-- Modulo de Financiero -->
         <li>
           <a href="../paginas/financiero.php" class="nav-link text-white">
-            <img src="../media/iconos/Financiero.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  alt="">
+            <img src="../media/iconos/Financiero.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Financiero
           </a>
         </li>
@@ -61,7 +74,7 @@
         <!-- Modulo de Novedades -->
         <li>
           <a href="../paginas/novedades.php" class="nav-link text-white">
-            <img src="../media/iconos/Novedad.ico"class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
+            <img src="../media/iconos/Novedad.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Novedades
           </a>
         </li>
@@ -70,7 +83,7 @@
         <!-- Modulo de Administrador Activo -->
         <li>
           <a href="../paginas/systemadministrador.php" class="nav-link text-white active" aria-current="page">
-            <img src="../media/iconos/Administrador .ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  alt="">
+            <img src="../media/iconos/Administrador .ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Administrador
           </a>
         </li>
@@ -79,7 +92,7 @@
         <!-- Modulo de Estudiantes -->
         <li>
           <a href="../paginas/estudiantes.php" class="nav-link text-white ">
-            <img src="../media/iconos/Estudiante.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50"  alt="">
+            <img src="../media/iconos/Estudiante.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Estudiantes
           </a>
         </li>
@@ -87,83 +100,78 @@
       <hr>
       <div class="dropdown">
         <a href="../index.html"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
-        
+
       </div>
     </div>
     <!-- END SIDE BARD -->
 
     <!-- Espacio entre el menú y la página del contenido de gestión -->
     <div class="b-example-divider"></div>
-      
-    <div class="container my-4 hijo-3">
-      <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
-        <img class="me-3 align-items-center" src="../media/logo/logoinstitutoclei.png" alt="" width="52" height="48">
-        <div class="lh-1">
-          <h1 class="h6 mb-0 text-white lh-1">Instituto CLEI</h1>
-          <small>Administrador</small>
-        </div>
-      </div>
 
-      <!-- Vista de los integrantes del perosnal de la institución -->
-      <div>
-        <h1 class="display-5 fw-bold lh-2 text-center">EQUIPO DE TRABAJO</h1><br>
-        <p class="lead"></p><br>
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
-          <h1 class="border-bottom pb-2 mb-0">Integrantes</h1>
-          <div class="d-flex text-muted pt-3">
-            <img src="../media/iconos/Laura.ico" class=" border border-3 rounded-2 bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" role="img" aria-label="Placeholder: 35x35">
-            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div class="d-flex justify-content-between">
-                <strong class="text-gray-dark">Laura Daniela Vanegas Torres</strong>
-                <a href="#">Editar</a>
-              </div>
-              <span class="d-block">@Laura Vanegas</span>
+    <div class="form-signin w-100 m-auto text-center">
+      <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 bg-opacity-25" action="systemadministrador.php" method="POST">
+
+        <img class="mb-4" src="../media/logo/logopaovadark.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>
+
+        <div class="form-floating ">
+          <input type="text" class="form-control" id="floatingInput" name="usuario" required="">
+          <label for="floatingInput"> Usuario </label>
+        </div>
+
+        <div class="form-floating">
+          <input name="contrasena" type="password" class="form-control" id="floatingPassword" required="">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" name="enviar" type="submit">Ingresar</button>
+        <br>
+
+        <?php
+
+        require_once '../conexion/conexion.php';
+
+        if (isset($_POST['enviar'])) {
+
+          $db = new db_conexion();
+
+          $usuario = $_POST['usuario'];
+
+          $sql = "SELECT user_administrador,password_administrador FROM administrador WHERE user_administrador = '$usuario'";
+
+          $query_exec = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
+          while ($row = mysqli_fetch_array($query_exec)) {            /*pasa a vector*/
+            $db->db_cerrar();
+
+
+            if ($_POST['contrasena'] == $row['password_administrador'] and $_POST['usuario'] == $row['user_administrador']) {
+              // header('location:administrador.php');
+              echo '<script>window.location="'.'administrador.php"</script>"';
+            }  
+
+        ?>
+          <br>
+          <div class="container">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error! </strong> Usuario o contraseña incorrectos.
+              </button>
             </div>
           </div>
-          <div class="d-flex text-muted pt-3">
-            <img src="../media/iconos//Julian.ico" class=" border border-3 rounded-2 bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" role="img" aria-label="Placeholder: 35x35">
-      
-            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div class="d-flex justify-content-between">
-                <strong class="text-gray-dark">Julian Paéz Ramirez</strong>
-                <a href="#">Editar</a>
-              </div>
-              <span class="d-block">@Julian Paez</span>
-            </div>
-          </div>
-          <div class="d-flex text-muted pt-3">
-            <img src="../media/iconos/Mateo.ico" class=" border border-3 rounded-2 bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" role="img" aria-label="Placeholder: 35x35">
-      
-            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div class="d-flex justify-content-between">
-                <strong class="text-gray-dark">Mateo Hernandez Ariza</strong>
-                <a href="#">Editar</a>
-              </div>
-              <span class="d-block">@Mateo Hernandez</span>
-            </div>
-          </div>
-          <div class="d-flex text-muted pt-3">
-            <img src="../media/iconos/Sara.ico" class=" border border-3 rounded-2 bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" role="img" aria-label="Placeholder: 35x35">
-      
-            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div class="d-flex justify-content-between">
-                <strong class="text-gray-dark">Sara Sofia Torres López</strong>
-                <a href="#">Editar</a>
-              </div>
-              <span class="d-block">@Sara Torres</span>
-            </div>
-          </div>
-            <small class="d-block text-end mt-3">
-              <a href="#">Anexar un nuevo usuario</a>
-            </small>
-        </div>          
-      </div>
+        <?php
+ }
+        }
+
+
+        ?>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+      </form>
     </div>
 
     <div class="b-example-divider"></div>
-      
+
   </main>
-     
+
 </body>
 
 </html>
+s

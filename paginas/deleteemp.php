@@ -1,14 +1,14 @@
 <?php
 
-include("conexion.php");
-$con=conectar();
+require_once '../conexion/conexion.php';                      /*LLama la conexión*/
+$db = new db_conexion();                                      /*Abre la base de datos*/
 
-$cod_estudiante=$_GET['id'];
+$id_login=$_GET['id'];
 
-$sql="DELETE FROM alumno  WHERE cod_estudiante='$cod_estudiante'";
-$query=mysqli_query($con,$sql);
+$sql="DELETE FROM empleados  WHERE id_login='$id_login'";
+$query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
 
     if($query){
-        Header("Location: alumno.php");
+        Header("Location: administrador.php");
     }
 ?>

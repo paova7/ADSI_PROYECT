@@ -1,17 +1,35 @@
 <?php
 
-include("conexion.php");
-$con=conectar();
+require_once '../conexion/conexion.php'; /*LLama la conexión*/
 
-$cod_estudiante=$_POST['cod_estudiante'];
-$dni=$_POST['dni'];
-$nombres=$_POST['nombres'];
-$apellidos=$_POST['apellidos'];
+$db=new db_conexion();
 
-$sql="UPDATE alumno SET  dni='$dni',nombres='$nombres',apellidos='$apellidos' WHERE cod_estudiante='$cod_estudiante'";
-$query=mysqli_query($con,$sql);
+
+$id=$_POST['id_login'];
+$nombre=$_POST['nombre'];
+$apellido=$_POST['apellido'];
+$documento=$_POST['documento'];
+$usuario=$_POST['usuario'];
+$contrasena=$_POST['contrasena'];
+$cargo=$_POST['cargo'];
+
+
+$sql="UPDATE empleados SET
+id_login='$id',
+nombreempleado_login='$nombre',
+apellidoempleado_login='$apellido',
+documentoempleado_login='$documento',
+usuario_login='$usuario',
+passport_login='$contrasena',
+cargoempleado_login='$cargo'
+WHERE id_login ='$id'";
+
+$query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
 
     if($query){
-        Header("Location: alumno.php");
+        Header("Location:administrador.php");
     }
 ?>
+
+
+   

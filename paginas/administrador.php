@@ -123,7 +123,6 @@
             <h1>Ingrese datos</h1>
             <form action="insertaremp.php" method="POST">
 
-              <!-- <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre"><?php echo $row['id_login'] ?> -->
               <input type="hidden" class="form-control mb-3" name="id_login" placeholder="id_login">
               <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre">
               <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellido">
@@ -146,7 +145,9 @@
                   <th>Documento</th>
                   <th>Usuario</th>
                   <th>Contraseña</th>
-                  <th>Cargo</th>
+                  <th>Cargo</th>            
+                  <th></th>
+                 <th></th>
 
                 </tr>
               </thead>

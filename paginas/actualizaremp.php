@@ -95,7 +95,7 @@
     <?php
       require_once '../conexion/conexion.php';                      /*LLama la conexión*/
       $db = new db_conexion();     /*Abre la base de datos*/
-      $id=$_GET['id_login'];
+      $id=$_GET['id'];
 
       $sql="SELECT * FROM empleados WHERE id_login='$id'";
       $query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
@@ -105,13 +105,13 @@
                 <div class="container mt-5">
                     <form action="updateemp.php" method="POST">
 
-                                <input type="hidden" name="id_login" value="<?php echo $row['id_login']  ?>">
+                                <input type="hidden" name="id_login" value="<?php echo $row['id_login'] ?>">
 
-                                <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?php echo $row['nombreempleado_login']  ?>">
-                                <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellido" value="<?php echo $row['apellidoempleado_login']  ?>">
-                                <input type="text" class="form-control mb-3" name="documento" placeholder="Documento" value="<?php echo $row['documentoempleado_login']  ?>">
-                                <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" value="<?php echo $row['usuario_login']  ?>">
-                                <input type="text" class="form-control mb-3" name="contrasena" placeholder="" value="<?php echo $row['passport_login']  ?>">
+                                <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre" value="<?php echo $row['nombreempleado_login'] ?>">
+                                <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellido" value="<?php echo $row['apellidoempleado_login'] ?>">
+                                <input type="text" class="form-control mb-3" name="documento" placeholder="Documento" value="<?php echo $row['documentoempleado_login'] ?>">
+                                <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" value="<?php echo $row['usuario_login'] ?>">
+                                <input type="text" class="form-control mb-3" name="contrasena" placeholder="" value="<?php echo $row['passport_login'] ?>">
                                 <input type="text" class="form-control mb-3" name="cargo" placeholder="Cargo" value="<?php echo $row['cargoempleado_login'] 
                                 ?>">
 

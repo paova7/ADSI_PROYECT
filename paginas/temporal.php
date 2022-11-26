@@ -206,3 +206,50 @@ iv class="col-md-6 mb-3">
   ?>
 
   
+<?php
+        require_once '../conexion/conexion.php';                      /*LLama la conexión*/
+        $db = new db_conexion();     /*Abre la base de datos*/
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+       
+        $nombre = $_POST['nombreempleado_login'];
+        $apellido = $_POST['apellidoempleado_login'];
+        $documento = $_POST['documentoempleado_login'];
+        $usuario = $_POST['usuario_login'];
+        $password = $_POST['passport_login'];
+        $cargo = $_POST['cargoempleado_login'];
+
+
+        mysqli_query($db->conectar(), "INSERT INTO empleados
+        (nombreempleado_login,
+        apellidoempleado_login,
+        documentoempleado_login,
+        usuario_login,
+        passport_login,
+        cargoempleado_login
+        ) 
+        VALUES 
+        (
+        '$nombre',
+        '$apellido',
+        '$documento',
+        '$usuario',
+        '$password ',
+        '$cargo')");
+
+$query = mysqli_query($db->conectar(), $sql); 
+$db->db_cerrar();
+
+if($query){
+    Header("Location: alumno.php");
+    echo "<div class='container formulario'>
+  <center>
+  <div class='alert alert-success' role='alert'>
+  <strong>Completado!</strong> Ingreso Con exito.
+  </div>
+  </center>";
+}else {
+}
+
+}
+?>/*

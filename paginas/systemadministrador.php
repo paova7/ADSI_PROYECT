@@ -109,7 +109,7 @@
     <div class="b-example-divider"></div>
 
     <div class="form-signin w-100 m-auto text-center">
-      <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 bg-opacity-25" action="systemadministrador.php" method="POST">
+      <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 bg-opacity-75" action="systemadministrador.php" method="POST">
 
         <img class="mb-4" src="../media/logo/logopaovadark.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>

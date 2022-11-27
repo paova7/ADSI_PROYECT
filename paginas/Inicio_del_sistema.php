@@ -1,3 +1,27 @@
+
+
+borrar
+
+<?php
+session_start();
+$usuario = $_SESSION['username'];
+
+if(!isset($usuario)){
+  header("location: Inicio_del_sistema.php");
+}else{
+
+}
+
+echo "siiiiiiiiiiiiiiiiiiiiiiiiiii";
+
+echo "<a href='../empleado.php'>Salir</a>";
+
+
+?>
+borrar
+
+
+
 <!DOCTYPE html>
 <html lang="es ">
 <head>
@@ -79,7 +103,7 @@
 
         <!-- Modulo de Estudiantes -->
         <li>
-          <a href="../paginas/estudiantes.php" class="nav-link text-white">
+          <a href="../datatables/estudiantes.php" class="nav-link text-white">
             <img src="../media/iconos/Estudiante.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
             Estudiantes
           </a>

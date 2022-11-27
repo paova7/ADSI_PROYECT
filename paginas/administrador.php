@@ -79,7 +79,7 @@
 
         <!-- Modulo de Estudiantes -->
         <li>
-          <a href="../paginas/estudiantes.php" class="nav-link text-white ">
+          <a href="../datatables/estudiantes.php" class="nav-link text-white ">
             <img src="../media/iconos/Estudiante.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Estudiantes
           </a>

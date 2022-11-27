@@ -1,4 +1,6 @@
 
+
+?>
 <!DOCTYPE html>
 <html lang="es" class="h-100 ">
 <head>
@@ -100,7 +102,7 @@ if (isset($_POST['enviar'])) {
     
 
     if ($_POST['contrasena'] == $row['passport_login'] and $_POST['usuario'] == $row['usuario_login']){
-      header('location:Inicio_del_sistema.html');
+      header('location:Inicio_del_sistema.php');
     } 
   }
 

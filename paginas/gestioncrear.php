@@ -25,7 +25,7 @@
   <main>
     <!-- SIDEBAR -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <a href="../paginas/Inicio_del_sistema.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="../media/logo/Isologoinstitutoclei.png" height="95">
       </a>
       <hr>
@@ -34,7 +34,7 @@
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Inicio
           </a>
@@ -94,13 +94,12 @@
     <!-- END SIDEBAR -->
 
     <!-- Espacio entre el menú y la página del contenido de gestión -->
-    <div class="b-example-divider"></div>
 
     <!-- CONTENIDO DEL MODULO DE CREACIÓN DE ESTUDIANTE-->
-    <div class="container my-5 hijo">
-      <div class="row p-5 pb-5 pe-lg-5 pt-lg-5  rounded-3 border shadow-lg">
+    <div class="overflow-auto">
+      <div class="row p-5 rounded-3 border shadow-lg  bg-light bg-gradient">
         <div>
-          <h1 class="display-5 fw-bold lh-2 text-center"> AGREGAR NUEVO ESTUDIANTE</h1><br>
+          <h1 class="display-4 fw-bold lh-2 text-center"> AGREGAR NUEVO ESTUDIANTE</h1><br>
           <p class="lead text-center"> Complete cada uno de los campos requeridos</p><br>
           <div class="hijo">
             <!-- Formulario para crear un estudiante-->
@@ -144,9 +143,9 @@
                 <select class="form-select" name="curso_form">
                   <!-- Lista desplegable -->
                   <option selected>Seleccione una curso </option>
-                  <option value="Validación del bachillerato">Validación del bachillerato</option>
-                  <option value="PREICFES - Saber 11">PREICFES - Saber 11</option>
-                  <option value="Pre - Universitario">Pre - Universitario</option>
+                  <option value="Validación del bachillerato">Validación_del_bachillerato</option>
+                  <option value="PREICFES - Saber 11">PreIcfes_Saber_11</option>
+                  <option value="Pre - Universitario">Pre_Universitario</option>
                 </select>
               </div>
 
@@ -155,10 +154,10 @@
                 <select class="form-select" name="horario_form">
                   <!-- Lista desplegable -->
                   <option selected>Seleccione un horario </option>
-                  <option value="Martes y jueves de 8:00 am a 10:30 am">Martes y jueves de 8:00 am a 10:30 am</option>
-                  <option value="Martes y jueves de 6:30 pm a 09:00 pm">Martes y jueves de 6:30 pm a 09:00 pm</option>
-                  <option value="Sábados de 08:00 am a 01:00 pm">Sábados de 08:00 am a 01:00 pm</option>
-                  <option value="Domingos de 08:00 am a 01:00 pm">Domingos de 08:00 am a 01:00 pm</option>
+                  <option value="Martes y jueves de 8:00 am a 10:30 am">Martes_y_jueves_8:00a.m._a_10:30a.m.</option>
+                  <option value="Martes y jueves de 6:30 pm a 09:00 pm">Martes_y_jueves_6:30p.m._a_09:00p.m.</option>
+                  <option value="Sábados de 08:00 am a 01:00 pm">Sábados_08:00a.m._a_01:00p.m.</option>
+                  <option value="Domingos de 08:00 am a 01:00 pm">Domingos_08:00a.m._a_01:00p.m.</option>
                 </select>
               </div>
 
@@ -186,50 +185,51 @@
                 <button type="submit" class="col-md-2 btn btn-primary btn btn-success" name="btn_guardar">Agregar</button>
                 <a type="button" class="col-md-2 btn btn-primary" href="../paginas/gestioncrear.php">Limpiar</a>
                 <a type="button" class="col-md-2 btn btn-info" href="../paginas/gestion.php">Regresar</a>
-                
+
               </div>
             </form>
           </div>
           <br>
         </div>
-        
-
-    <?php
-
- $contadorvacio  = "";                                  /*Variables de control para validar si está vacio y si existe la consulta*/
- $contadorexiste = "";
-
-    if (isset($_POST['btn_guardar'])) {
-
-      $contadorvacio  = 0;                              /*Inicializa las variables en 0 para trabajar*/
-      $contadorexiste = 0;
-
-      $documento = $_POST["documento_form"];            /*pide los datos por POST desde el formulario*/
-      $nombre = $_POST["nombre_form"];
-      $apellido = $_POST["apellido_form"];
-      $email = $_POST["email_form"];
-      $fecha = $_POST["fecha_form"];
-      $numero_estudiante = $_POST["numero_estudiante_form"];
-      $curso = $_POST["curso_form"];
-      $horario = $_POST["horario_form"];
-      $numero_acudiente = $_POST["numero_acudiente_form"];
-      $ciudad_residencia = $_POST["ciudad_residencia_form"];
-      $discapacidad = $_POST["discapacidad_form"];
 
 
-      if ($documento    == "" ||
-          $nombre       == "" ||
-          $apellido     == "" ||
-          $email        == "" ||
-          $fecha        == "" ||
-          $curso        == "" ||
-          $horario      == "" ||
-          $numero_estudiante == "" ||
-          $numero_acudiente  == "" ||
-          $ciudad_residencia  == ""||         
-          $discapacidad == ""
+        <?php
+
+        $contadorvacio  = "";                                  /*Variables de control para validar si está vacio y si existe la consulta*/
+        $contadorexiste = "";
+
+        if (isset($_POST['btn_guardar'])) {
+
+          $contadorvacio  = 0;                              /*Inicializa las variables en 0 para trabajar*/
+          $contadorexiste = 0;
+
+          $documento = $_POST["documento_form"];            /*pide los datos por POST desde el formulario*/
+          $nombre = $_POST["nombre_form"];
+          $apellido = $_POST["apellido_form"];
+          $email = $_POST["email_form"];
+          $fecha = $_POST["fecha_form"];
+          $numero_estudiante = $_POST["numero_estudiante_form"];
+          $curso = $_POST["curso_form"];
+          $horario = $_POST["horario_form"];
+          $numero_acudiente = $_POST["numero_acudiente_form"];
+          $ciudad_residencia = $_POST["ciudad_residencia_form"];
+          $discapacidad = $_POST["discapacidad_form"];
+
+
+          if (
+            $documento    == "" ||
+            $nombre       == "" ||
+            $apellido     == "" ||
+            $email        == "" ||
+            $fecha        == "" ||
+            $curso        == "" ||
+            $horario      == "" ||
+            $numero_estudiante == "" ||
+            $numero_acudiente  == "" ||
+            $ciudad_residencia  == "" ||
+            $discapacidad == ""
           ) {                                     /*si está alguno de los campos vacios*/
-        echo "
+            echo "
         <div class='container'>
           <center>
             <div class='alert alert-danger' role='alert'>
@@ -238,47 +238,45 @@
           </center>
         </div>";
 
-        $contadorvacio ++;                          /*Este acumulador se marca cuando el campo está vacio*/
-      } 
-        else {
+            $contadorvacio++;                          /*Este acumulador se marca cuando el campo está vacio*/
+          } else {
 
-          require_once '../conexion/conexion.php';                    /*LLama la conexión*/
+            require_once '../conexion/conexion.php';                    /*LLama la conexión*/
 
-          $db = new db_conexion();                                    /*Abre la base de datos*/
-          $sql = "SELECT documento_estudiante FROM estudiantes        /*Realiza la consuta*/ 
+            $db = new db_conexion();                                    /*Abre la base de datos*/
+            $sql = "SELECT documento_estudiante FROM estudiantes        /*Realiza la consuta*/ 
                   WHERE documento_estudiante ='$documento'";
 
-          $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
-          while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
-          $db->db_cerrar();
+            $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
+            while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
+              $db->db_cerrar();
 
-          $contadorexiste ++;                       /*Este acumulador se marca cuando el número existe en la DB*/
-          
+              $contadorexiste++;                       /*Este acumulador se marca cuando el número existe en la DB*/
+            }
           }
-        }
 
-      if ($contadorexiste == 1) {                   /*Este IF imprime la alerta si existía y da la opción de modificar al estudiante*/
+          if ($contadorexiste == 1) {                   /*Este IF imprime la alerta si existía y da la opción de modificar al estudiante*/
         ?>
 
-        <div class='container formulario'>
-          <center>
-            <div class='alert alert-danger' role='alert'>
-            <strong>¡Error!</strong> El estudiante ya está registrado.
+            <div class='container formulario'>
+              <center>
+                <div class='alert alert-danger' role='alert'>
+                  <strong>¡Error!</strong> El estudiante ya está registrado.
+                </div>
+              </center>
             </div>
-          </center>
-        </div>
 
-        <a href="../paginas/gestionactualizar.php"><button type="button" class="btn btn-warning" >Modificar</button></a>
+            <a href="../paginas/gestionactualizar.php"><button type="button" class="btn btn-warning">Modificar</button></a>
 
         <?php
-      }
+          }
 
-      if ($contadorvacio == 0 and $contadorexiste == 0) {             /*Si no se acumuló ninguna de las variables de control, se debe hacer el Insert a la DB */ 
+          if ($contadorvacio == 0 and $contadorexiste == 0) {             /*Si no se acumuló ninguna de las variables de control, se debe hacer el Insert a la DB */
 
-        require_once '../conexion/conexion.php';                      /*LLama la conexión*/ 
+            require_once '../conexion/conexion.php';                      /*LLama la conexión*/
 
-        $db = new db_conexion();                                      /*Abre la base de datos*/
-        mysqli_query($db->conectar(), "INSERT INTO estudiantes
+            $db = new db_conexion();                                      /*Abre la base de datos*/
+            mysqli_query($db->conectar(), "INSERT INTO estudiantes
                                   (documento_estudiante,
                                   nombre_estudiante,
                                   apellido_estudiante,
@@ -304,21 +302,19 @@
                                   '$ciudad_residencia',
                                   '$discapacidad')");
 
-        $db->db_cerrar();
-        echo "<div class='container formulario'>
+            $db->db_cerrar();
+            echo "<div class='container formulario'>
           <center>
           <div class='alert alert-success' role='alert'>
           <strong>Completado!</strong> Ingreso Con exito.
           </div>
           </center>";
-      };
-    }
-  ?>
+          };
+        }
+        ?>
 
-  </div>      <!-- Los div de acá se cierran para que aparezca todo dentro del div -->
-</div>
-  <div class="b-example-divider"></div>
-
+      </div> <!-- Los div de acá se cierran para que aparezca todo dentro del div -->
+    </div>
 
 
   </main>

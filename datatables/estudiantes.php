@@ -23,20 +23,18 @@
 
 
   <script>
-
-function ConfirmDemo() {
-  alert("¡Gracias por confirmar!");
-    window.location.href = "../index.html";
-    if (mensaje) {
-    alert("¡Haz denegado el mensaje!");
+    function ConfirmDemo() {
+      alert("¡Gracias por confirmar!");
+      window.location.href = "../index.html";
+      if (mensaje) {
+        alert("¡Haz denegado el mensaje!");
+      }
+      //Verificamos si el usuario denegó el mensaje
+      else {
+        alert("¡Haz denegado el mensaje!");
+      }
     }
-    //Verificamos si el usuario denegó el mensaje
-    else {
-    alert("¡Haz denegado el mensaje!");
-    }
-}
-
-</script>
+  </script>
 </head>
 
 <body>
@@ -54,7 +52,7 @@ function ConfirmDemo() {
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Inicio
           </a>
@@ -106,58 +104,54 @@ function ConfirmDemo() {
         </li>
       </ul>
       <hr>
-      
+
       <div class="dropdown">
- 
 
 
 
-        <a href="../index.html"><button type="button" onclick="ConfirmDemo();" class="btn btn-danger" >Salir del sistema</button></a>
+
+        <a href="../index.html"><button type="button" onclick="ConfirmDemo();" class="btn btn-danger">Salir del sistema</button></a>
 
       </div>
     </div>
-    <div class="b-example-divider"></div>
 
     <!-- END SIDE BARD -->
 
 
 
     </div>
-
     <div class="row overflow-auto">
       <nav class="navbar bg-light">
-
-        <div class="container-fluid">
-        </div>
+    </div>
       </nav>
+    <div class="container overflow-auto"><br>
+    <h1 class="text-center fw-bold">Estudiantes en el Instituto CLEI</h1>
 
-      <div class="container">
-        <div class="row">
+      <div class="row">
+        <div>
+          <table id="example" class="table table-striped ">
+            <thead>
+              <th>ID</th>
+              <th>DOCUMENTO</th>
+              <th>NOMMBRE</th>
+              <th>APELLIDOS</th>
+              <th>EMAIL</th>
+              <th>FECHA DE NACIMIENTO</th>
+              <th>TELEFONO</th>
+              <th>CIUDAD</th>
+              <th>DISCAPACIDAD</th>
+              <th>CURSO</th>
+              <th>HORARIO</th>
+              <th>ACUDIENTE</th>
 
-          <div>
-            <table id="example" class="table table-striped ">
-              <thead>
-                <th>ID</th>
-                <th>DOCUMENTO</th>
-                <th>NOMMBRE</th>
-                <th>APELLIDOS</th>
-                <th>EMAIL</th>
-                <th>FECHA DE NACIMIENTO</th>
-                <th>TELEFONO</th>
-                <th>CIUDAD</th>
-                <th>DISCAPACIDAD</th>
-                <th>CURSO</th>
-                <th>HORARIO</th>
-                <th>ACUDIENTE</th>
-
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
-      
+    </div>
+
     </div>
     </div>
     </div>
@@ -194,8 +188,6 @@ function ConfirmDemo() {
           ]
         });
       });
-
-      
     </script>
 
 

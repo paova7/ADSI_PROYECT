@@ -24,6 +24,8 @@ passport_login='$contrasena',
 cargoempleado_login='$cargo'
 WHERE id_login ='$id'";
 
+
+
 $query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
 
     if($query){

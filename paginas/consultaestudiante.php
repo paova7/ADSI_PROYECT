@@ -49,9 +49,9 @@
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Contactanos</h4>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-white">WhatsApp</a></li>
-              <li><a href="#" class="text-white">Vísitanos en Facebook</a></li>
-              <li><a href="#" class="text-white">Correo</a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=573117206123&text=Buen+d%C3%ADa,+necesito+informaci%C3%B3n+de+los+programas+educativos.&utm_source=webpage" class="text-white">WhatsApp</a></li>
+              <li><a href="https://www.facebook.com/cleicolombia/" class="text-white">Vísitanos en Facebook</a></li>
+              <li><a href="https://www.youtube.com/channel/UCqjg1DQBzTBxR29qB5eAoVgss" class="text-white">Canal de YouTube</a></li>
             </ul>
           </div>
         </div>
@@ -131,11 +131,9 @@
                 <br>
                 <br>        
                   <div class="container formulario"></div>
-                    <center>
-                      <div class="alert alert-danger" role="alert">
-                      <strong>Error!</strong> El numero de Cedula es Obligatorio.
-                      </div>
-                    </center>
+                      <div class="alert alert-danger align-items-center" role="alert" >
+                      <strong>Error!</strong> El numero de cédula es obligatorio.
+                      </div><hr class="my-4">
                   </div>
 
                 <?php
@@ -155,7 +153,8 @@
 
                       <br>
                       <br>
-                      <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button></a>
+                      <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button><hr class="my-4">
+</a>
                     
                     <?php
                     
@@ -167,18 +166,16 @@
                 echo '
                 <br>
                 <br>        
-                  <div class="container formulario"></div>
-                    <center>
+                  <div class="container formulario align-items-center"></div>        
                       <div class="alert alert-danger" role="alert">
-                      <strong>Error!</strong> El numero de Cedula no existe.
-                      </div>
-                    </center>
+                      <strong>Error!</strong> El número de documento no coincide con alguno de nuestros estudiantes.
+                      </div><hr class="my-4">
+        
                   </div>';
               }
             
             }  
             ?>
-            <hr class="my-4">
             <small class="text-muted"> Año 2022</small>
           </form>
         </div>

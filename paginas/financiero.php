@@ -25,7 +25,7 @@
   <main>
     <!-- SIDE BARD -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+      <a href="../paginas/Inicio_del_sistema.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
         <img src="../media/logo/Isologoinstitutoclei.png" height="95">
       </a>
       <hr>
@@ -34,7 +34,7 @@
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Inicio
           </a>
@@ -287,7 +287,7 @@ if (isset($_POST['btn_pago'])) {
        <div class='container'>
          <center>
            <div class='alert alert-danger' role='alert'>
-           <strong>Error!</strong> Los Campos con * son Obligatorios Hola.
+           <strong>Error!</strong> Los Campos con * son Obligatorios.
            </div>
          </center>
        </div>";
@@ -316,9 +316,10 @@ if (isset($_POST['btn_pago'])) {
     <div class='container formulario'>
       <center>
         <div class='alert alert-danger' role='alert'>
-          <strong>¡Error!</strong> El estudiante no existe aja.
+          <strong>¡Error!</strong> El estudiante no existe.
         </div>
       </center>
+    </div>
     </div>
 
 
@@ -350,6 +351,7 @@ if (isset($_POST['btn_pago'])) {
          <center>
          <div class='alert alert-success' role='alert'>
          <strong>Completado!</strong> Ingreso Con exito.
+         </div>
          </div>
          </center>";
   };

@@ -25,7 +25,7 @@
   <main>
     <!-- SIDE BARD -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+      <a href="../paginas/Inicio_del_sistema.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
         <img src="../media/logo/Isologoinstitutoclei.png" height="95">
       </a>
       <hr>
@@ -34,7 +34,7 @@
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Inicio
           </a>
@@ -121,7 +121,7 @@
 
           <div class="col-md-3">
             <h1>Ingrese datos</h1>
-            <form action="insertaremp.php" method="POST">
+            <form action="adminsertar.php" method="POST">
 
               <input type="hidden" class="form-control mb-3" name="id_login" placeholder="id_login">
               <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre">
@@ -137,7 +137,8 @@
           <br>
           <div class="col-md-8">
             <table class="table">
-              <thead class="table-success table-striped">
+              <!-- se asigna el nombre de cabecera de la columna -->
+              <thead class="table-success table-dark table-bordered">
                 <tr>
                   <th>Id</th>
                   <th>Nombre</th>
@@ -152,10 +153,11 @@
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody class="table-bordered">
                 <?php
                 while ($row = mysqli_fetch_array($query)) {
                 ?>
+                <!-- Vistas de los datos de los empleados -->
                   <tr>
                     <th><?php echo $row['id_login'] ?></th>
                     <th><?php echo $row['nombreempleado_login'] ?></th>
@@ -165,9 +167,11 @@
                     <th><?php echo $row['passport_login'] ?></th>
                     <th><?php echo $row['cargoempleado_login'] ?></th>
 
-
-                    <th><a href="actualizaremp.php?id=<?php echo $row['id_login'] ?>" class="btn btn-info">Editar</a></th>
-                    <th><a href="deleteemp.php?id=<?php echo $row['id_login'] ?>" class="btn btn-danger">Eliminar</a></th>
+                    <!-- Me redirige a el modulo de madificar y por POST lleva el identificador para saer a quien se le dabe realizar el cambio -->
+                    <th><a href="admiactualizar.php?id=<?php echo $row['id_login'] ?>" class="btn btn-info">Editar</a></th>
+                    <!-- Realiza de inmediata la acción de elimina -->
+                    <!-- Se va implementar una alerta, está en proceso -->
+                    <th><a href="admieliminar.php?id=<?php echo $row['id_login'] ?>" class="btn btn-danger">Eliminar</a></th>
                   </tr>
                 <?php
                 }

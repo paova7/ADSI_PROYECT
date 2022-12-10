@@ -1,24 +1,5 @@
 
 
-borrar
-
-<?php
-session_start();
-$usuario = $_SESSION['username'];
-
-if(!isset($usuario)){
-  header("location: Inicio_del_sistema.php");
-}else{
-
-}
-
-echo "siiiiiiiiiiiiiiiiiiiiiiiiiii";
-
-echo "<a href='../empleado.php'>Salir</a>";
-
-
-?>
-borrar
 
 
 
@@ -128,9 +109,7 @@ borrar
           <!-- Contenido de gestión estudiantel sitio informativo (Sin definir contenido) -->
           <h1 class="display-4 fw-bold lh-1">Bienvenidos a nuestro sistema de gestión del Instituto CLEI</h1>
           <br>
-          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem est id maiores esse sed ea soluta temporibus quibusdam, consectetur odit quisquam amet sapiente quas velit repudiandae harum repellendus atque illo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, incidunt illo odit laboriosam qui iusto veniam, ab fugit dolores molestiae ex necessitatibus saepe odio omnis! Recusandae illum porro dolore maiores?
+          <p class="lead">Aqui se relaizará una breve explicación de cada uno de los modulos y algunas recomendaciones.
           </p>
         </div>
       </div>

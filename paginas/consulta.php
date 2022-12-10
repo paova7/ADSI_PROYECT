@@ -46,9 +46,9 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contactanos</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">WhatsApp</a></li>
-                            <li><a href="#" class="text-white">Vísitanos en Facebook</a></li>
-                            <li><a href="#" class="text-white">Correo</a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=573117206123&text=Buen+d%C3%ADa,+necesito+informaci%C3%B3n+de+los+programas+educativos.&utm_source=webpage" class="text-white">WhatsApp</a></li>
+                            <li><a href="https://www.facebook.com/cleicolombia/" class="text-white">Vísitanos en Facebook</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCqjg1DQBzTBxR29qB5eAoVgss" class="text-white">Canal de YouTube</a></li>
                         </ul>
                     </div>
                 </div>
@@ -83,38 +83,33 @@
 
     <!-- CONTENIDO DEL MÓDULO DE CONSULTA ESTUDIANTES-->
 
-<
+    < <main style="padding-top: 50px;">
+        <?php
 
-    <main style="padding-top: 120px;">
-<?php
+        $consultaestudiante = $_GET["documento"];
 
+        require_once '../conexion/conexion.php';  /*LLama la conexión*/
+        $db = new db_conexion();               /*Abre la base de datos*/
 
-$consultaestudiante = $_GET["documento"];
-
-require_once '../conexion/conexion.php';  /*LLama la conexión*/
-$db = new db_conexion();               /*Abre la base de datos*/
-
-$sql = "SELECT * FROM estudiantes
+        $sql = "SELECT * FROM estudiantes
         WHERE documento_estudiante ='$consultaestudiante'";
 
-$resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
-while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
+        $resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
+        while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
 
 
-?>
-        </div>
-        <br>
+        ?>
+            </div>
             <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
-                <p class="fs-2 fw-bolder">Bienveniedo <?php echo $registro['nombre_estudiante']; ?></p>
-                <p>Podrás visiualizar tu estado en la institución </p>
-                <br>
+                <h1 class="fs-8 fw-bolder">Bienvenid@</h1>
+                <p class="fs-5" ><?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?> <br> Acontinuación podrás visiualizar tu estado en la Institución </p>
                 <div class="bd-example-snippet bd-code-snippet text-start">
-                    <p class="fs-8 fw-bolder" ;>Datos personales</p>
+                    <p class="fs-4 text fw-bolder" ;>Datos personales:</p>
                     <div class="bd-example">
-                        <table class="table table-sm table-bordered">
+                        <table class="table  table-bordered border border-5">
                             <tbody>
                                 <tr>
-                                    <td scope="col">Nombres :<?php echo " " . $registro['nombre_estudiante']; ?></td>
+                                    <td scope="col"> Nombres :<?php echo " " . $registro['nombre_estudiante']; ?></td>
                                     <td scope="col">Apellidos: <?php echo  " " . $registro['apellido_estudiante']; ?></td>
 
                                 </tr>
@@ -134,66 +129,65 @@ while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
                             </tbody>
                         </table>
                     </div>
-                    <p class="fs-8 fw-bolder" ;>Programa en curso</p>
+                    <p class="fs-4 text fw-bolder" ;>Programa en curso:</p>
                     <div class="bd-example">
-                        <table class="table table-sm table-bordered">
+                        <table class="table  table-bordered border border-5">
                             <tbody>
                                 <tr>
-                                    <td scope="col"> <?php echo " " . $registro['curso_estudiante']; ?></td>
+                                    <td scope="col"> <strong>Curso: </strong><?php echo " " . $registro['curso_estudiante']; ?></td>
                                     <td scope="col">Horario de clases: <?php echo  " " . $registro['horario_estudiante']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-    
+<strong></strong>
 
 
-                    <p class="fs-8 fw-bolder" ;>Pagos realizados</p>
+                    <p class="fs-4 text fw-bolder";>Pagos realizados:</p>
                     <div class="bd-example">
-                        <table class="table table-sm table-bordered">
+                        <table class="table table-striped table-bordered border border-5">
                             <tbody>
                                 <tr>
+                                    <?php
 
+                                    $sql2 = "SELECT * FROM financiero
+                                    WHERE documentoestudiante_financiero ='$consultaestudiante'";
 
-                                <?php
-    
+                                    $resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
+                                    while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/
 
+                                        $db->db_cerrar()
 
-$sql2 = "SELECT * FROM financiero
-WHERE documentoestudiante_financiero ='$consultaestudiante'";
-
-$resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
-while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/    
-
-$db->db_cerrar()
-
- ?>  
- <td scope="col"> Fecha de Pago:<?php echo " " . $registro2['fechadepago_financiero']. " " . "Valor Pagado: " .$registro2['valorcancelado_financiero']; ?></td>
-
-                                    
-                                
-<?php
-        }
- ?>    
-                                
+                                    ?>
+                                <tr>
+                                    <td scope="col"> Fecha de Pago:<?php echo " " . $registro2['fechadepago_financiero']; ?></td>
+                                    <td scope="col"> Valor Pagado:<?php echo " " . $registro2['valorcancelado_financiero']; ?></td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Realizar otra consulta -->
-                    <div class="dropdown">
-                        <a href="../paginas/consultaestudiante.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Realizar otra consulta</button></a>
 
                     </div>
+
+                <?php
+                                    }
+                ?>
+
+                </tr>
+                </tbody>
+                </table>
                 </div>
+                <!-- Realizar otra consulta -->
+                <div class="dropdown">
+                    <a href="../paginas/consultaestudiante.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Realizar otra consulta</button></a>
 
-                <small class="text-muted"> Año 2022</small>
+                </div>
             </div>
 
- <?php
+            <small class="text-muted"> Año 2022</small>
+            </div>
+
+        <?php
         }
-    
- ?>           
+
+        ?>
 </body>
 
 </html>

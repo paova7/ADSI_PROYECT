@@ -1,8 +1,7 @@
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es" class="h-100 ">
+
 <head>
   <meta charset="UTF-8">
 
@@ -49,7 +48,7 @@
         <nav class="fw-bold nav nav-masthead nav-pills nav-fill justify-content-center float-md-end">
           <ul class="nav nav-pills">
             <!-- Boton de inicio -->
-            <a class="nav-link" style="margin-left: 20px"  href="../index.html">Inicio</a>
+            <a class="nav-link" style="margin-left: 20px" href="../index.html">Inicio</a>
             <!-- Boton de Estudiante -->
             <a class="nav-link" style="margin-left: 20px" href="../paginas/consultaestudiante.php">Estudiante</a>
             <!-- desplegable de ingreso "Empleado" o "Administrador" -->
@@ -59,72 +58,73 @@
         <!-- Boton del navbar -->
         <button>
         </button>
-      </div>      
+      </div>
     </div>
   </header>
 
   <!-- LOGIN DE INGRESO -->
-  <main class="form-signin w-100 m-auto text-center" style="padding-top: 150px;">
-    <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" action ="empleado.php" method="POST">
+  <main class="form-signin w-100 m-auto text-center" style="padding-top: 50px;">
+    <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" action="empleado.php" method="POST">
 
       <img class="mb-4" src="../media/logo/logopaovadark.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>
 
       <div class="form-floating ">
-        <input type="text" class="form-control" id="floatingInput" name="usuario" required= "" >
+        <input type="text" class="form-control" id="floatingInput" name="usuario" required="">
         <label for="floatingInput"> Usuario </label>
       </div>
 
       <div class="form-floating">
-        <input name="contrasena" type="password" class="form-control" id="floatingPassword" required= "">
+        <input name="contrasena" type="password" class="form-control" id="floatingPassword" required="">
         <label for="floatingPassword">Contraseña</label>
       </div>
 
       <button class="w-100 btn btn-lg btn-primary" name="enviar" type="submit">Ingresar</button>
       <br>
 
-<?php 
+      <?php
 
-require_once '../conexion/conexion.php';
+      require_once '../conexion/conexion.php'; /*LLama la conexión*/
 
-if (isset($_POST['enviar'])) {
+      if (isset($_POST['enviar'])) {
 
-    $db = new db_conexion();
+        $db = new db_conexion();  /*Abre la base de datos*/
 
-    $usuario = $_POST['usuario'];
+        $usuario = $_POST['usuario'];
 
-    $sql = "SELECT usuario_login,passport_login FROM empleados 
+        $sql = "SELECT usuario_login,passport_login FROM empleados 
             WHERE usuario_login  = '$usuario'";
 
-    $query_exec = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
-    while ($row = mysqli_fetch_array($query_exec)) {            /*pasa a vector*/
-    $db->db_cerrar();
-    
-
-    if ($_POST['contrasena'] == $row['passport_login'] and $_POST['usuario'] == $row['usuario_login']){
-      header('location:Inicio_del_sistema.php');
-    } 
-  }
-
-  ?>
-  <br>
-  <div class="container">
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Error!      </strong>   Usuario o contraseña incorrectos.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-  </button>
-  </div>
-  </div>
-  <?php
-      
-  }
+        $query_exec = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
+        while ($row = mysqli_fetch_array($query_exec)) {            /*pasa a vector*/
+          $db->db_cerrar();
 
 
-?>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+          if ($_POST['contrasena'] == $row['passport_login'] and $_POST['usuario'] == $row['usuario_login']) {
+            header('location:Inicio_del_sistema.php');
+          }
+        }
+
+      ?>
+        <br>
+
+
+        <div class="container">
+
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> Usuario o contraseña incorrectos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+        </div>
+      <?php
+
+      }
+
+      ?>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </form>
   </main>
 </body>
-</html>
 
+</html>

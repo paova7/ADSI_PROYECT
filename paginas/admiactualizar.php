@@ -22,7 +22,7 @@
   <main>
     <!-- SIDE BARD -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+      <a href="../paginas/Inicio_del_sistema.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
         <img src="../media/logo/Isologoinstitutoclei.png" height="95">
       </a>
       <hr>
@@ -31,7 +31,7 @@
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Inicio
           </a>
@@ -103,7 +103,8 @@
       $row = mysqli_fetch_array($query);
       ?>
                 <div class="container mt-5">
-                    <form action="updateemp.php" method="POST">
+                    <!-- almacena los datos y los lleva al archivo que se va a encargar de subirlo en la base de datos -->
+                    <form action="admiupdate.php" method="POST">
 
                                 <input type="hidden" name="id_login" value="<?php echo $row['id_login'] ?>">
 
@@ -115,7 +116,7 @@
                                 <input type="text" class="form-control mb-3" name="cargo" placeholder="Cargo" value="<?php echo $row['cargoempleado_login'] 
                                 ?>">
 
-                                
+                            <!-- realiza la acción de actualizar     -->
                             <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
                     </form>
                     

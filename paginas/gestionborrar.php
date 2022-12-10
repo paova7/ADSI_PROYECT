@@ -24,7 +24,7 @@
   <main >
     <!-- SIDE BARD -->
     <div class=" d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 320px;">
-      <a href="../paginas/Inicio_del_sistema.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <a href="../paginas/Inicio_del_sistema.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img src="../media/logo/Isologoinstitutoclei.png"  height="95">
       </a>
       <hr>
@@ -33,7 +33,7 @@
       <ul class="nav nav-pills flex-column mb-auto" >
         <!-- Modulo de Inicio -->
         <li class="nav-item " width="85" height="85">
-          <a href="../paginas/Inicio_del_sistema.html" class="nav-link text-white">
+          <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
             Inicio
           </a>
@@ -44,7 +44,7 @@
         <li>
           <a href="../paginas/gestion.php" class="nav-link text-white active" aria-current="page">
             <img src="../media/iconos/Management.ico"class="img-fluid" style="padding-inline-end: 10px;"  width="50" height="50">
-            Gestión
+            Gestión - Borrar
           </a>
         </li>
         <div class="b-divider"></div>
